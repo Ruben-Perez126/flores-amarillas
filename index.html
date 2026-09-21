@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Flores Amarillas 🌻</title>
+
+<style>
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+}
+
+body{
+background:linear-gradient(to bottom,#fff8c6,#ffd43b);
+height:100vh;
+overflow:hidden;
+font-family:Arial, sans-serif;
+display:flex;
+justify-content:center;
+align-items:center;
+flex-direction:column;
+}
+
+#inicio{
+text-align:center;
+}
+
+h1{
+color:#8a6200;
+margin-bottom:20px;
+}
+
+button{
+padding:15px 30px;
+font-size:20px;
+border:none;
+border-radius:10px;
+background:#ffcc00;
+cursor:pointer;
+}
+
+button:hover{
+background:#ffd633;
+}
+
+#mensaje{
+display:none;
+text-align:center;
+padding:20px;
+}
+
+#mensaje h2{
+font-size:40px;
+color:#8a6200;
+margin-bottom:20px;
+}
+
+#mensaje p{
+font-size:24px;
+color:#5c4200;
+max-width:700px;
+}
+
+.flor{
+position:absolute;
+top:-100px;
+font-size:35px;
+animation:caer linear infinite;
+}
+
+@keyframes caer{
+to{
+transform:translateY(120vh);
+}
+}
+
+</style>
+</head>
+
+<body>
+
+<div id="inicio">
+<h1>🌻 Feliz Dia de las Flores Amarillas 🌻</h1>
+<button onclick="mostrarMensaje()">
+Haz clic aquí 🌻
+</button>
+</div>
+
+<div id="mensaje">
+<h2>🌻 Flores Amarillas 🌻</h2>
+
+<p>
+Estas flores son para ti.<br><br>
+
+Creiste que se me habia olvidado jajaja, pues ya vez que no.<br><br>
+
+💛
+</p>
+
+</div>
+
+<script>
+
+function mostrarMensaje(){
+
+document.getElementById("inicio").style.display="none";
+
+document.getElementById("mensaje").style.display="block";
+
+for(let i=0;i<40;i++){
+
+let flor=document.createElement("div");
+
+flor.className="flor";
+
+flor.innerHTML="🌻";
+
+flor.style.left=Math.random()*100+"vw";
+
+flor.style.animationDuration=
+(5+Math.random()*6)+"s";
+
+flor.style.fontSize=
+(20+Math.random()*40)+"px";
+
+document.body.appendChild(flor);
+}
+
+}
+
+</script>
+
+</body>
+</html>
